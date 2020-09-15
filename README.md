@@ -30,7 +30,7 @@ $ npm test
 
 Production:
 ```sh
-$ npm build
+$ npm run build
 ```
 
 #### yarn
