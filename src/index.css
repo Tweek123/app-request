@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.form {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__item {
+  margin-bottom: 20px;
+}
+
+.form__button {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.form__input-text {
+  width: 200px;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+
+.table__col {
+  padding: 10px;
+  min-width: 40px;
+  border: 1px solid black;
+}
+
+.dict-element {
+  margin-bottom: 10px;
+}
+
+
+.table__header-col {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.table__button {
+  width: 100px;
+}
+
+.connect-websocket {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.messages {
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.messages__item {
+  margin-bottom: 10px;
+}
+.hidden {
+  display: none;
+}
