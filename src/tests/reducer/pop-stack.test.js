@@ -39,7 +39,7 @@ describe('pop stack from state', () => {
             {...requests.requestPUT}
         ]
       expect(
-        reducer({stack}, actions.popStack())
+        reducer({stack}, actions.shiftStack())
       ).toEqual({stack: resultStack})
     })
 

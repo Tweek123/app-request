@@ -48,7 +48,7 @@ import * as matchers from 'redux-saga-test-plan/matchers';
       [matchers.call.fn(Api.fetchGET), {request: {...requests.requestGET}, response}],
       ])
      .dispatch(actions.addRequest(requests.requestGET))
-     .put(actions.popStack())
+     .put(actions.shiftStack())
      .put.like({ action: actions.addRequestInHistory({response,request: requests.requestGET}) })
      .run()
 
@@ -74,7 +74,7 @@ import * as matchers from 'redux-saga-test-plan/matchers';
       [matchers.call.fn(Api.fetchPOST), {request: {...requests.requestPOST}, response}],
       ])
      .dispatch(actions.addRequest(requests.requestPOST))
-     .put(actions.popStack())
+     .put(actions.shiftStack())
      .put.like({ action: actions.addRequestInHistory({response,request: requests.requestPOST}) })
      .run()
 
@@ -98,7 +98,7 @@ import * as matchers from 'redux-saga-test-plan/matchers';
       [matchers.call.fn(Api.fetchPUT), {request: {...requests.requestPUT}, response}],
       ])
      .dispatch(actions.addRequest(requests.requestPUT))
-     .put(actions.popStack())
+     .put(actions.shiftStack())
      .put.like({ action: actions.addRequestInHistory({response,request: requests.requestPUT}) })
      .run()
 
@@ -123,7 +123,7 @@ import * as matchers from 'redux-saga-test-plan/matchers';
       [matchers.call.fn(Api.fetchDELETE), {request: {...requests.requestDELETE}, response}],
       ])
      .dispatch(actions.addRequest(requests.requestDELETE))
-     .put(actions.popStack())
+     .put(actions.shiftStack())
      .put.like({ action: actions.addRequestInHistory({response,request: requests.requestDELETE}) })
      .run()
 

@@ -12,18 +12,22 @@ export function* watchConnectWebsocket() {
 }
 
 export function* checkStack() {
-    const stack = yield select(state => state.requestReducer.stack)
-    if(stack.length === 1)  {
+    const stackRun = yield select(state => state.requestReducer.stackRun)
+    if(!stackRun) {
+        yield put(actions.stackRun(true))
         yield runStack();
     }
 }
 export function* runStack() {
-    const stack = yield select(state => state.requestReducer.stack);
-    const request = stack.pop();
-    yield put(actions.popStack());
+    let stack = yield select(state => state.requestReducer.stack);
+    const request = stack[0];
+    yield put(actions.shiftStack());
     yield requestSend(request);
+    stack = yield select(state => state.requestReducer.stack);
     if(stack.length)  {
-        yield requestSend(request);
+        yield runStack();
+    } else {
+        yield put(actions.stackRun(false))
     }
 }
 

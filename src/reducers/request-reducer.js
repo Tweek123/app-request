@@ -1,6 +1,7 @@
 const initialState = {
     history: [],
-    stack: []
+    stack: [],
+    stackRun: false
 }
 
 export default function reducer(state = initialState, action) {
@@ -21,10 +22,14 @@ export default function reducer(state = initialState, action) {
       }
       return {...state, history: [...state.history]}
 
-      case "POP_STACK":
-      state.stack.pop();
+      case "SHIFT_STACK":
+      console.log("??");
+      state.stack.shift();
       return {...state}
       
+      case "STACK_RUN":
+      state.stackRun = action.run;
+      return {...state}
       default:
         return state;
     }
